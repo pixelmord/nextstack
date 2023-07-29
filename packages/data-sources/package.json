@@ -1,0 +1,23 @@
+{
+  "name": "data-sources",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "get:movies": "wget https://www.meilisearch.com/movies.json -d ./movies/movies.json",
+    "get:worldfacts": "degit https://github.com/factbook/factbook.json.git ./world-factbook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "degit": "^2.8.4",
+    "eslint-config-custom": "workspace:*",
+    "fast-glob": "^3.3.1",
+    "node-wget-fetch": "^1.1.3",
+    "prettier-config": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsx": "^3.12.7"
+  }
+}

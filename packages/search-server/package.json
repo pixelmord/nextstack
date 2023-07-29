@@ -1,0 +1,22 @@
+{
+  "name": "search-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "dotenv -e .env.local -- pnpm run serve",
+    "serve": "meilisearch --master-key=$MEILISEARCH_MASTERKEY"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv-cli": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "eslint-config-custom": "workspace:*",
+    "prettier-config": "workspace:*",
+    "tsconfig": "workspace:*"
+  }
+}
