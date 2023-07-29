@@ -1,0 +1,32 @@
+{
+  "name": "rocksolid",
+  "scripts": {
+    "prepare": "panda codegen",
+    "dev": "solid-start dev --port 3001",
+    "build": "solid-start build",
+    "start": "solid-start start",
+    "test": "vitest run",
+    "test-watch": "vitest",
+    "test-ui": "vitest --ui",
+    "coverage": "vitest run --coverage"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@pandacss/dev": "^0.8.0",
+    "@solidjs/meta": "^0.28.6",
+    "@solidjs/router": "^0.8.2",
+    "@solidjs/testing-library": "^0.8.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@types/testing-library__jest-dom": "^5.14.9",
+    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
+    "jsdom": "^22.1.0",
+    "solid-js": "^1.7.8",
+    "solid-start": "^0.2.29",
+    "solid-start-node": "^0.2.29",
+    "typescript": "^5.1.6",
+    "undici": "^5.22.1",
+    "vite": "^4.4.7",
+    "vitest": "^0.33.0"
+  }
+}
