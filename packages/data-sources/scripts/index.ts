@@ -1,15 +1,13 @@
-import fs from 'fs/promises';
-import path from 'path';
+import camelcase from 'camelcase';
+import camelcaseKeys from 'camelcase-keys';
 import fg from 'fast-glob';
+import fs from 'fs/promises';
+import MeiliSearch from 'meilisearch';
+import path from 'path';
+import { sanitize } from 'string-sanitizer';
 
 const DB_PATH = path.join(__dirname, '../world-factbook');
-type json =
-    | string
-    | number
-    | boolean
-    | json[]
-    | {[key: string ]: json}
-
+type json = string | number | boolean | json[] | { [key: string]: json };
 
 const foldersToIgnore = ['meta'];
 const getFolders = async () => {
@@ -20,37 +18,57 @@ const getFolders = async () => {
   }));
 };
 
-const flattenTextKeyInObject = (obj: Record<string, json> | json) => {
-    if (typeof obj !== 'object' || Array.isArray(obj)) {
-        return obj;
-    }
-    return Object.keys(obj).reduce((acc, key) => {
-
-        if (typeof obj[key] === 'object') {
-          if (obj[key]['text']) {
-            return { ...acc, [key]: obj[key]['text'] };
-          }
-          return {...acc, [key]: flattenTextKeyInObject(obj[key])}
+const flattenTextKeyInObject = (obj: json) => {
+  if (typeof obj !== 'object' || Array.isArray(obj)) {
+    throw new Error('flattenTextKeyInObject only accepts objects');
+  }
+  return Object.keys(obj).reduce(
+    (acc, key): Record<string, json> => {
+      if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+        const curObj = obj[key] as Record<string, json>;
+        const curKey = camelcase(sanitize.keepSpace(key));
+        if (curObj['text']) {
+          return { ...acc, [curKey]: curObj['text'] };
         }
-        return acc;
-    }, {});
-}
+        return { ...acc, [curKey]: { humanReadableKeyName: key, ...flattenTextKeyInObject(obj[key]) } };
+      }
+      return acc;
+    },
+    {} as Record<string, json>
+  );
+};
 const main = async () => {
+  const client = new MeiliSearch({
+    host: 'http://127.0.0.1:7700',
+    apiKey: '7mmiYBn4mRmggZyn9eAq',
+  });
+  const index = client.index('worldfacts');
   const folders = await getFolders();
   const files = await Promise.all(
     folders.map(async (f) => {
       return fg(`${f.absolutePath}/*.json`, { onlyFiles: true, absolute: false });
-    }));
-  folders.forEach((f, i) => {
-    console.log(f.relativePath, files[i].length);
-    let dataId = f.relativePath;
-    files[i].forEach(async (file) => {
-      const data = await fs.readFile(file, 'utf-8');
-      const json = JSON.parse(data);
-        const flattenedJson = flattenTextKeyInObject(json);
-        console.dir(flattenedJson, { depth: null });
     })
-  })
+  );
+  const dataEntries = await Promise.all(
+    folders.map((f, i) => {
+      const dataId = f.relativePath;
+      return Promise.all(
+        files[i].map(async (file) => {
+          const fileId = file.split('/').pop()?.split('.')[0];
+          const data = await fs.readFile(file, 'utf-8');
+          const json = JSON.parse(data);
+          const flattenedJson = {
+            id: dataId + '--' + fileId,
+            url: `/worldfacts/${dataId}/${fileId}`,
+            ...flattenTextKeyInObject(json),
+          };
+
+          return flattenedJson;
+        })
+      );
+    })
+  );
+  index.addDocuments(camelcaseKeys(dataEntries.flat(), { deep: true }));
 };
 main().catch((e) => {
   console.error(e);

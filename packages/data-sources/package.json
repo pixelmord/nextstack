@@ -19,5 +19,11 @@
     "prettier-config": "workspace:*",
     "tsconfig": "workspace:*",
     "tsx": "^3.12.7"
+  },
+  "dependencies": {
+    "camelcase": "^7.0.1",
+    "camelcase-keys": "^8.0.2",
+    "meilisearch": "^0.33.0",
+    "string-sanitizer": "^2.0.2"
   }
 }
