@@ -7,7 +7,7 @@ import { allCssProperties } from './is-valid-prop.mjs';
 
 function styledFn(element, configOrCva = {}) {
   const cvaFn = configOrCva.__cva__ ? configOrCva : cva(configOrCva)
-  
+
   return function StyledComponent(props) {
     const mergedProps = mergeProps({ as: element }, props)
 
@@ -24,7 +24,7 @@ function styledFn(element, configOrCva = {}) {
       const styles = assignCss(propStyles, cssStyles)
       return cx(cvaFn(variantProps), css(styles), localProps.class)
     }
-    
+
     function cvaClass() {
       const { css: cssStyles, ...propStyles } = styleProps
       const cvaStyles = cvaFn.resolve(variantProps)
@@ -33,7 +33,7 @@ function styledFn(element, configOrCva = {}) {
     }
 
     const classes = configOrCva.__recipe__ ? recipeClass : cvaClass
-    
+
     return createComponent(
       Dynamic,
       mergeProps(
@@ -67,5 +67,5 @@ function createJsxFactory() {
     },
   })
 }
-  
-export const styled = createJsxFactory()
+
+export const styled = /* @__PURE__ */ createJsxFactory()

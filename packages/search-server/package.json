@@ -14,7 +14,7 @@
     "dotenv-cli": "^7.2.1"
   },
   "devDependencies": {
-    "@types/node": "^14.14.31",
+    "@types/node": "^20.4.9",
     "eslint-config-custom": "workspace:*",
     "prettier-config": "workspace:*",
     "tsconfig": "workspace:*"
