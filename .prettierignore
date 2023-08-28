@@ -4,6 +4,7 @@ public
 **/**/node_modules
 **/**/.next
 **/**/public
+**/**/styled-system
 
 *.lock
 *.log
