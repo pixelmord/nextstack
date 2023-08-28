@@ -2,6 +2,10 @@
 import type { AnySelector, Selectors } from './selectors'
 
 export type Conditions = {
+	"_light": string
+	"_dark": string
+	"_pinkTheme": string
+	"_blueTheme": string
 	"_hover": string
 	"_focus": string
 	"_focusWithin": string
@@ -75,8 +79,6 @@ export type Conditions = {
 	"_print": string
 	"_landscape": string
 	"_portrait": string
-	"_dark": string
-	"_light": string
 	"_osDark": string
 	"_osLight": string
 	"_highContrast": string
@@ -89,6 +91,10 @@ export type Conditions = {
 	"_scrollbarTrack": string
 	"_horizontal": string
 	"_vertical": string
+	"_closed": string
+	"_hidden": string
+	"_current": string
+	"_today": string
 	"sm": string
 	"smOnly": string
 	"smDown": string

@@ -1,7 +1,7 @@
 {
   "name": "rocksolid",
   "scripts": {
-    "prepare": "panda codegen",
+    "prepare": "panda codegen --silent",
     "dev": "solid-start dev --port 3001",
     "build": "solid-start build",
     "start": "solid-start start",
@@ -12,21 +12,27 @@
   },
   "type": "module",
   "devDependencies": {
-    "@pandacss/dev": "^0.10.0",
+    "@pandacss/dev": "^0.13.0",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",
     "@solidjs/testing-library": "^0.8.4",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@types/testing-library__jest-dom": "^5.14.9",
+    "@testing-library/jest-dom": "^6.1.2",
+    "@types/testing-library__jest-dom": "^6.0.0",
     "@vitest/coverage-c8": "^0.33.0",
-    "@vitest/ui": "^0.34.1",
+    "@vitest/ui": "^0.34.3",
     "jsdom": "^22.1.0",
-    "solid-js": "^1.7.9",
-    "solid-start": "^0.3.1",
-    "solid-start-node": "^0.3.1",
-    "typescript": "^5.1.6",
+    "solid-js": "^1.7.11",
+    "solid-start": "^0.3.4",
+    "solid-start-node": "^0.3.4",
+    "typescript": "^5.2.2",
     "undici": "^5.23.0",
     "vite": "^4.4.9",
-    "vitest": "^0.34.1"
+    "vite-tsconfig-paths": "^4.2.0",
+    "vitest": "^0.34.3"
+  },
+  "dependencies": {
+    "@ark-ui/solid": "^0.9.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.0.9",
+    "@park-ui/presets": "^0.8.1"
   }
 }

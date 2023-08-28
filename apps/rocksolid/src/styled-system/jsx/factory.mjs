@@ -6,7 +6,7 @@ import { normalizeHTMLProps } from '../helpers.mjs';
 import { allCssProperties } from './is-valid-prop.mjs';
 
 function styledFn(element, configOrCva = {}) {
-  const cvaFn = configOrCva.__cva__ ? configOrCva : cva(configOrCva)
+  const cvaFn = configOrCva.__cva__ || configOrCva.__recipe__ ? configOrCva : cva(configOrCva)
 
   return function StyledComponent(props) {
     const mergedProps = mergeProps({ as: element }, props)
@@ -27,7 +27,7 @@ function styledFn(element, configOrCva = {}) {
 
     function cvaClass() {
       const { css: cssStyles, ...propStyles } = styleProps
-      const cvaStyles = cvaFn.resolve(variantProps)
+      const cvaStyles = cvaFn.raw(variantProps)
       const styles = assignCss(cvaStyles, propStyles, cssStyles)
       return cx(css(styles), localProps.class)
     }

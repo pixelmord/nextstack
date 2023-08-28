@@ -156,6 +156,7 @@ type PropertyValueTypes  = {
 	transitionDuration: Tokens["durations"];
 	transition: "all" | "common" | "background" | "colors" | "opacity" | "shadow" | "transform";
 	animation: Tokens["animations"];
+	animationName: Tokens["animationName"];
 	animationDelay: Tokens["durations"];
 	scale: "auto" | CssProperties["scale"];
 	translate: "auto" | CssProperties["translate"];
@@ -201,8 +202,8 @@ type PropertyValueTypes  = {
 	stroke: Tokens["colors"];
 	srOnly: boolean;
 	debug: boolean;
-	colorPalette: "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate";
-	textStyle: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+	colorPalette: "rose" | "pink" | "fuchsia" | "purple" | "violet" | "indigo" | "blue" | "sky" | "cyan" | "teal" | "emerald" | "green" | "lime" | "yellow" | "amber" | "orange" | "red" | "neutral" | "stone" | "zinc" | "gray" | "slate" | "grayPalette" | "bg" | "fg" | "accent" | "border";
+	textStyle: "8xl" | "9xl" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl";
 }
 
 
@@ -302,7 +303,7 @@ type PropertyValueTypes  = {
 }
 
 export type PropertyValue<T extends string> = T extends keyof PropertyTypes
-  ? ConditionalValue<PropertyTypes[T] | CssValue<T>>
+  ? ConditionalValue<PropertyTypes[T] | CssValue<T> | (string & {})>
   : T extends keyof CssProperties
-  ? ConditionalValue<CssProperties[T]>
+  ? ConditionalValue<CssProperties[T] | (string & {})>
   : ConditionalValue<string | number>
