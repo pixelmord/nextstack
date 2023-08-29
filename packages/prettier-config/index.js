@@ -7,9 +7,5 @@ module.exports = {
   semi: true,
   printWidth: 120,
   singleQuote: true,
-  plugins: [
-    require('prettier-plugin-packagejson'),
-    require('prettier-plugin-organize-imports'),
-    require('prettier-plugin-tailwindcss'),
-  ],
+  plugins: [require('prettier-plugin-packagejson'), require('prettier-plugin-tailwindcss')],
 };

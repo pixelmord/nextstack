@@ -39,6 +39,9 @@ export default defineConfig({
       },
       semanticTokens: {
         colors: {
+          bg: {
+            canvas: { value: { base: '{colors.gray-palette.50}', _dark: '{colors.gray-palette.900}' } },
+          },
           accent: {
             default: { value: { base: '{colors.fuchsia.500}', _dark: '{colors.fuchsia.500}' } },
             emphasized: { value: { base: '{colors.fuchsia.600}', _dark: '{colors.fuchsia.400}' } },

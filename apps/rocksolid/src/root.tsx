@@ -3,10 +3,13 @@ import '@fontsource-variable/plus-jakarta-sans';
 import './index.css';
 
 import { Routes } from '@solidjs/router';
+import { Menu } from 'lucide-solid';
 import { createSignal, Suspense } from 'solid-js';
 import { Body, FileRoutes, Head, Html, Meta, Scripts, Title } from 'solid-start';
 import { ErrorBoundary } from 'solid-start/error-boundary';
 
+import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar';
+import { Button } from './components/ui/button';
 import { css } from './styled-system/css';
 
 export default function Root() {
@@ -35,8 +38,18 @@ export default function Root() {
                 width: '100%',
               })}
             >
-              <nav class={css({ p: '0.75rem', display: 'flex' })}>
-                <button onClick={() => setMaximized(!maximized())}> x</button>
+              <nav class={css({ p: '0.75rem', display: 'flex', justifyContent: 'space-between' })}>
+                <div>
+                  <Button variant="tertiary" onClick={() => setMaximized(!maximized())}>
+                    <Menu />
+                  </Button>
+                </div>
+                <div>
+                  <Avatar>
+                    <AvatarFallback>PA</AvatarFallback>
+                    <AvatarImage src="https://i.pravatar.cc/300" alt="avatar" />
+                  </Avatar>
+                </div>
               </nav>
             </header>
             <div
@@ -96,6 +109,9 @@ export default function Root() {
                   overflowY: 'auto',
                   marginLeft: { lg: '4rem' },
                   p: '0.75rem',
+                  transitionDuration: '100ms',
+                  transitionProperty: 'margin',
+                  transitionTimingFunction: 'cubic-bezier(.4,0,.2,1)',
                   _peerActive: {
                     marginLeft: { base: '0', lg: '16rem' },
                   },
