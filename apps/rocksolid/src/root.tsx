@@ -8,14 +8,28 @@ import { createSignal, Suspense } from 'solid-js';
 import { Body, FileRoutes, Head, Html, Meta, Scripts, Title } from 'solid-start';
 import { ErrorBoundary } from 'solid-start/error-boundary';
 
+import { ColorSchemeToggle } from './components/ColorSchemeToggle';
 import { Avatar, AvatarFallback, AvatarImage } from './components/ui/avatar';
 import { Button } from './components/ui/button';
 import { css } from './styled-system/css';
-
+import { HStack } from './styled-system/jsx';
+export const initializecolorScheme = () => {
+  let colorScheme;
+  if (typeof document !== 'undefined') {
+    colorScheme = document.documentElement.dataset.colorMode as 'light' | 'dark';
+  } else if (typeof localStorage !== 'undefined' && localStorage.getItem('colorScheme')) {
+    colorScheme = localStorage.getItem('colorScheme') as 'light' | 'dark';
+  } else if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    colorScheme = 'dark';
+  } else {
+    colorScheme = 'light';
+  }
+  return colorScheme;
+};
 export default function Root() {
   const [maximized, setMaximized] = createSignal(false);
   return (
-    <Html lang="en" data-color-mode="dark">
+    <Html lang="en">
       <Head>
         <Title>Rocksolid</Title>
         <Meta charset="utf-8" />
@@ -44,12 +58,13 @@ export default function Root() {
                     <Menu />
                   </Button>
                 </div>
-                <div>
+                <HStack>
+                  <ColorSchemeToggle />
                   <Avatar>
                     <AvatarFallback>PA</AvatarFallback>
                     <AvatarImage src="https://i.pravatar.cc/300" alt="avatar" />
                   </Avatar>
-                </div>
+                </HStack>
               </nav>
             </header>
             <div

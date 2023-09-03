@@ -1,6 +1,7 @@
-import { Pressable } from '@ark-ui/solid';
+import type { ComponentProps } from 'solid-js';
 
 import { styled } from '@/styled-system/jsx';
-import { button } from '@/styled-system/recipes';
+import { button, type ButtonVariantProps } from '@/styled-system/recipes';
 
-export const Button = styled(Pressable, button);
+export type ButtonProps = ButtonVariantProps & ComponentProps<'button'>;
+export const Button = styled('button', button);

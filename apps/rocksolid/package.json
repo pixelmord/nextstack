@@ -2,7 +2,7 @@
   "name": "rocksolid",
   "scripts": {
     "prepare": "panda codegen --silent",
-    "dev": "solid-start dev --port 3001",
+    "dev": "solid-start dev --port 3005",
     "build": "solid-start build",
     "start": "solid-start start",
     "test": "vitest run",
