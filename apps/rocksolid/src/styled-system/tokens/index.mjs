@@ -523,6 +523,10 @@ const tokens = {
     "value": "1.125rem",
     "variable": "var(--sizes-4\\.5)"
   },
+  "sizes.2xs": {
+    "value": "16rem",
+    "variable": "var(--sizes-2xs)"
+  },
   "sizes.breakpoint-sm": {
     "value": "640px",
     "variable": "var(--sizes-breakpoint-sm)"

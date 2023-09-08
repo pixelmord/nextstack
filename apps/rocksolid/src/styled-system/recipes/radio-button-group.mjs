@@ -2,7 +2,8 @@ import { splitProps, getSlotCompoundVariant } from '../helpers.mjs';
 import { createRecipe } from './create-recipe.mjs';
 
 const radioButtonGroupDefaultVariants = {
-  "size": "md"
+  "size": "md",
+  "variant": "solid"
 }
 const radioButtonGroupCompoundVariants = []
 
@@ -39,6 +40,7 @@ const radioButtonGroupFn = (props = {}) => {
 }
 
 const radioButtonGroupVariantKeys = [
+  "variant",
   "size"
 ]
 
@@ -47,6 +49,10 @@ export const radioButtonGroup = Object.assign(radioButtonGroupFn, {
   raw: (props) => props,
   variantKeys: radioButtonGroupVariantKeys,
   variantMap: {
+  "variant": [
+    "solid",
+    "outline"
+  ],
   "size": [
     "sm",
     "md",

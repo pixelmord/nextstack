@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/menu'
-import { styled } from '@/styled-system/jsx'
-import { menu, type MenuVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {MenuVariantProps} from '@/styled-system/recipes';
+import { menu  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(menu)
 

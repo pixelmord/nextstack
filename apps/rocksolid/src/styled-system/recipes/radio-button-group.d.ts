@@ -1,10 +1,11 @@
 /* eslint-disable */
-import type { ConditionalValue } from '../types'
-import type { Pretty } from '../types/helpers'
-import type { DistributiveOmit } from '../types/system-types'
+import type { ConditionalValue } from '../types/index';
+import type { Pretty } from '../types/helpers';
+import type { DistributiveOmit } from '../types/system-types';
 
 type RadioButtonGroupVariant = {
-  size: "sm" | "md" | "lg" | "xl"
+  variant: "solid" | "outline"
+size: "sm" | "md" | "lg" | "xl"
 }
 
 type RadioButtonGroupVariantMap = {

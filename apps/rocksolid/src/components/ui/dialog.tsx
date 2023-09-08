@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/dialog'
-import { styled } from '@/styled-system/jsx'
-import { dialog, type DialogVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {DialogVariantProps} from '@/styled-system/recipes';
+import { dialog  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(dialog)
 

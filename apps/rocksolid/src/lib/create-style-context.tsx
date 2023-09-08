@@ -2,11 +2,11 @@ import type { Component as ComponentType } from 'solid-js';
 import { createContext, useContext } from 'solid-js';
 
 type AnyProps = Record<string, unknown>;
-type AnyRecipe = {
+interface AnyRecipe {
   (props?: AnyProps): Record<string, string>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   splitVariantProps: (props: AnyProps) => any;
-};
+}
 
 export const createStyleContext = <R extends AnyRecipe>(recipe: R) => {
   const StyleContext = createContext<Record<string, string> | null>(null);

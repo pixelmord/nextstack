@@ -20,13 +20,12 @@ export const ColorSchemeToggle = () => {
   });
 
   return (
-    <div>
-      <IconButton
-        onClick={() => setcolorScheme((t) => (t === 'light' ? 'dark' : 'light'))}
-        aria-label="switch between light and dark mode"
-      >
-        {colorScheme() === 'light' ? <Sun /> : <Moon />}
-      </IconButton>
-    </div>
+    <IconButton
+      onClick={() => setcolorScheme((t) => (t === 'light' ? 'dark' : 'light'))}
+      variant="tertiary"
+      aria-label="switch between light and dark mode"
+    >
+      {colorScheme() === 'light' ? <Sun /> : <Moon />}
+    </IconButton>
   );
 };

@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/pagination'
-import { styled } from '@/styled-system/jsx'
-import { pagination, type PaginationVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {PaginationVariantProps} from '@/styled-system/recipes';
+import { pagination  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(pagination)
 

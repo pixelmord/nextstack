@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/number-input'
-import { styled } from '@/styled-system/jsx'
-import { numberInput, type NumberInputVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {NumberInputVariantProps} from '@/styled-system/recipes';
+import { numberInput  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(numberInput)
 

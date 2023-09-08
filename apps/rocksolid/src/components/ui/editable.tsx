@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/editable'
-import { styled } from '@/styled-system/jsx'
-import { editable, type EditableVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {EditableVariantProps} from '@/styled-system/recipes';
+import { editable  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(editable)
 

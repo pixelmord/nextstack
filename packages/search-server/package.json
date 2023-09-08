@@ -11,12 +11,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv-cli": "^7.2.1"
+    "dotenv-cli": "^7.3.0"
   },
   "devDependencies": {
-    "@types/node": "^20.4.9",
-    "eslint-config-custom": "workspace:*",
-    "prettier-config": "workspace:*",
-    "tsconfig": "workspace:*"
-  }
+    "@pixelstack/eslint-config": "workspace:*",
+    "@pixelstack/prettier-config": "workspace:*",
+    "@pixelstack/tsconfig": "workspace:*",
+    "@types/node": "^20.5.9"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@pixelstack/eslint-config/base"
+    ]
+  },
+  "prettier": "@pixelstack/prettier-config"
 }

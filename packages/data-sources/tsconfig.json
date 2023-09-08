@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/base.json",
+  "extends": "@pixelstack/tsconfig/base.json",
   "compilerOptions": {
     "lib": ["ESNext"]
   },

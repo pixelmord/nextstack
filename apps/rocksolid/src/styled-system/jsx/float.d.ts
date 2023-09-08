@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { FloatProperties } from '../patterns/float'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { FloatProperties } from '../patterns/float';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type FloatProps = FloatProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof FloatProperties >
 

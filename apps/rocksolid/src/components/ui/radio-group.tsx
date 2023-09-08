@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/radio-group'
-import { styled } from '@/styled-system/jsx'
-import { radioGroup, type RadioGroupVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {RadioGroupVariantProps} from '@/styled-system/recipes';
+import { radioGroup  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(radioGroup)
 

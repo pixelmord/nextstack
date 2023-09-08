@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "@pixelstack/tsconfig/base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

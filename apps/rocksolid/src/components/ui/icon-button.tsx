@@ -1,7 +1,9 @@
 import type { Component } from 'solid-js'
+
 import { css, cx } from '@/styled-system/css'
 
-import { Button, type ButtonProps } from './button'
+import type {ButtonProps} from './button';
+import { Button  } from './button'
 
 export type IconButtonProps = ButtonProps & { icon?: Component; 'aria-label': string }
 

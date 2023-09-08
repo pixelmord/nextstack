@@ -1,9 +1,10 @@
 'use client'
 import * as Ark from '@ark-ui/solid/tabs'
-import { styled } from '@/styled-system/jsx'
-import { tabs, type TabsVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {TabsVariantProps} from '@/styled-system/recipes';
+import { tabs  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(tabs)
 

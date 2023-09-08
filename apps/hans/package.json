@@ -2,14 +2,15 @@
   "name": "hans",
   "version": "0.0.1",
   "scripts": {
-    "dev": "enhance dev --port 3005",
+    "dev": "enhance dev --port 3003",
     "lint": "eslint ./app/**/*.mjs --fix",
     "enhance": "enhance"
   },
   "devDependencies": {
-    "@enhance/cli": "latest",
-    "@enhance/types": "^0.6.0",
-    "eslint": "^8.30.0"
+    "@enhance/cli": "^1.0.4",
+    "@enhance/types": "^0.6.1",
+    "@types/eslint": "^8.44.2",
+    "eslint": "^8.49.0"
   },
   "eslintConfig": {
     "env": {
@@ -29,7 +30,7 @@
     }
   },
   "dependencies": {
-    "@enhance/arc-plugin-enhance": "^6.2.1",
+    "@enhance/arc-plugin-enhance": "^6.2.2",
     "@enhance/arc-plugin-styles": "^3.0.4",
     "@enhance/styles-cribsheet": "^0.0.9"
   }

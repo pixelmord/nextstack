@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/range-slider'
-import { styled } from '@/styled-system/jsx'
-import { rangeSlider, type RangeSliderVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {RangeSliderVariantProps} from '@/styled-system/recipes';
+import { rangeSlider  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(rangeSlider)
 

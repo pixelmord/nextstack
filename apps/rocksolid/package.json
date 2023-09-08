@@ -2,39 +2,75 @@
   "name": "rocksolid",
   "scripts": {
     "prepare": "panda codegen --silent",
+    "clean": "git clean -xdf .next .turbo node_modules",
     "dev": "solid-start dev --port 3005",
     "build": "solid-start build",
     "start": "solid-start start",
     "test": "vitest run",
     "test-watch": "vitest",
     "test-ui": "vitest --ui",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{ts,tsx,js,jsx}\"",
+    "format": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json}\"",
     "coverage": "vitest run --coverage"
   },
   "type": "module",
   "devDependencies": {
-    "@pandacss/dev": "^0.13.0",
+    "@pandacss/dev": "^0.14.0",
+    "@pixelstack/eslint-config": "workspace:*",
+    "@pixelstack/prettier-config": "workspace:*",
+    "@pixelstack/tsconfig": "workspace:*",
     "@solidjs/meta": "^0.28.6",
     "@solidjs/router": "^0.8.3",
     "@solidjs/testing-library": "^0.8.4",
-    "@testing-library/jest-dom": "^6.1.2",
+    "@testing-library/jest-dom": "^6.1.3",
+    "@types/jsdom": "^21.1.2",
+    "@types/mapbox-gl": "^2.7.13",
     "@types/testing-library__jest-dom": "^6.0.0",
     "@vitest/coverage-c8": "^0.33.0",
-    "@vitest/ui": "^0.34.3",
+    "@vitest/ui": "^0.34.4",
+    "dotenv-cli": "^7.3.0",
     "jsdom": "^22.1.0",
-    "prettier-config": "workspace:*",
     "solid-js": "^1.7.11",
-    "solid-start": "^0.3.4",
-    "solid-start-node": "^0.3.4",
+    "solid-start": "^0.3.5",
+    "solid-start-node": "^0.3.5",
     "typescript": "^5.2.2",
-    "undici": "^5.23.0",
+    "undici": "^5.24.0",
     "vite": "^4.4.9",
     "vite-tsconfig-paths": "^4.2.0",
-    "vitest": "^0.34.3"
+    "vitest": "^0.34.4"
   },
   "dependencies": {
     "@ark-ui/solid": "^0.9.0",
+    "@auth/core": "^0.14.0",
     "@fontsource-variable/plus-jakarta-sans": "^5.0.9",
-    "@park-ui/presets": "^0.8.1",
-    "lucide-solid": "^0.270.0"
-  }
+    "@park-ui/presets": "^0.10.0",
+    "@solid-mediakit/auth": "^1.0.0",
+    "@supabase/supabase-js": "^2.33.1",
+    "@tanstack/solid-query": "^5.0.0-beta.15",
+    "@trpc/client": "^10.38.1",
+    "@trpc/server": "^10.38.1",
+    "lucide-solid": "^0.274.0",
+    "mapbox-gl": "^2.15.0",
+    "solid-map-gl": "^1.9.4",
+    "solid-start-trpc": "^0.0.16",
+    "solid-supabase": "^0.5.0",
+    "solid-trpc": "0.1.0-sssr.8",
+    "zod": "^3.22.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@pixelstack/eslint-config/base",
+      "@pixelstack/eslint-config/solid"
+    ],
+    "ignorePatterns": [
+      "node_modules",
+      ".next",
+      ".turbo",
+      "src/styled-system",
+      "src/*.test.tsx"
+    ]
+  },
+  "prettier": "@pixelstack/prettier-config"
 }

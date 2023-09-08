@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/pin-input'
-import { styled } from '@/styled-system/jsx'
-import { pinInput, type PinInputVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {PinInputVariantProps} from '@/styled-system/recipes';
+import { pinInput  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(pinInput)
 

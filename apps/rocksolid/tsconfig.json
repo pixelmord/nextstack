@@ -1,18 +1,13 @@
 {
+  "extends": "@pixelstack/tsconfig/base.json",
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
     "jsxImportSource": "solid-js",
     "jsx": "preserve",
     "strict": true,
-    "types": ["solid-start/env", "@testing-library/jest-dom"],
-    "baseUrl": "./",
+    "types": ["solid-start/env", "@testing-library/jest-dom","vitest"],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "types": ["vitest"]
 }

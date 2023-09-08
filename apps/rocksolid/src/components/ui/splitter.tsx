@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/splitter'
-import { styled } from '@/styled-system/jsx'
-import { splitter, type SplitterVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {SplitterVariantProps} from '@/styled-system/recipes';
+import { splitter  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 

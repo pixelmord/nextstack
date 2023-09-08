@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { BleedProperties } from '../patterns/bleed'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { BleedProperties } from '../patterns/bleed';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type BleedProps = BleedProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof BleedProperties >
 

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import type { ComponentProps, Component, JSX } from 'solid-js'
-import type { Assign, JsxStyleProps, JsxHTMLProps } from './system-types'
-import type { RecipeDefinition, RecipeSelection, RecipeVariantRecord } from './recipe'
+import type { Assign, JsxStyleProps, JsxHTMLProps } from './system-types';
+import type { RecipeDefinition, RecipeSelection, RecipeVariantRecord } from './recipe';
 
 type Dict = Record<string, unknown>
 

@@ -9,13 +9,22 @@
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
+    "@pixelstack/eslint-config": "workspace:*",
+    "@pixelstack/prettier-config": "workspace:*",
+    "@pixelstack/tsconfig": "workspace:*",
     "@types/eslint": "^8.44.2",
-    "@types/react": "^18.2.19",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "eslint": "^8.46.0",
-    "eslint-config-custom-nextjs": "workspace:*",
+    "eslint": "^8.49.0",
     "react": "^18.2.0",
-    "tsconfig": "workspace:*",
-    "typescript": "^5.1.6"
-  }
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@pixelstack/eslint-config/base",
+      "@pixelstack/eslint-config/react"
+    ]
+  },
+  "prettier": "@pixelstack/prettier-config"
 }

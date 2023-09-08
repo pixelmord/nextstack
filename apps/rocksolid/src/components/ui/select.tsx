@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/select'
-import { styled } from '@/styled-system/jsx'
-import { select, type SelectVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {SelectVariantProps} from '@/styled-system/recipes';
+import { select  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(select)
 

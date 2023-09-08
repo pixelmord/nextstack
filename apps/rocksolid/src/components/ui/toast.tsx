@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/toast'
-import { styled } from '@/styled-system/jsx'
-import { toast, type ToastVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {ToastVariantProps} from '@/styled-system/recipes';
+import { toast  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(toast)
 

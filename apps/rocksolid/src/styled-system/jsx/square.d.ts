@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { SquareProperties } from '../patterns/square'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { SquareProperties } from '../patterns/square';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type SquareProps = SquareProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof SquareProperties >
 

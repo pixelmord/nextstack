@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { GridProperties } from '../patterns/grid'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { GridProperties } from '../patterns/grid';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type GridProps = GridProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof GridProperties >
 

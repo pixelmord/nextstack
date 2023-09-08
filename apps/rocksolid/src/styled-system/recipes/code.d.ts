@@ -1,7 +1,7 @@
 /* eslint-disable */
-import type { ConditionalValue } from '../types'
-import type { Pretty } from '../types/helpers'
-import type { DistributiveOmit } from '../types/system-types'
+import type { ConditionalValue } from '../types/index';
+import type { Pretty } from '../types/helpers';
+import type { DistributiveOmit } from '../types/system-types';
 
 type CodeVariant = {
   size: "sm" | "md" | "lg"
@@ -24,5 +24,5 @@ interface CodeRecipe {
   splitVariantProps<Props extends CodeVariantProps>(props: Props): [CodeVariantProps, Pretty<DistributiveOmit<Props, keyof CodeVariantProps>>]
 }
 
-/** An code style */
+/** A code style */
 export declare const code: CodeRecipe

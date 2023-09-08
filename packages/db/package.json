@@ -1,0 +1,38 @@
+{
+  "name": "@pixelstack/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "push": "drizzle-kit push:mysql",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@planetscale/database": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.28.6"
+  },
+  "devDependencies": {
+    "@pixelstack/eslint-config": "^0.2.0",
+    "@pixelstack/prettier-config": "^0.1.0",
+    "@pixelstack/tsconfig": "^0.1.0",
+    "@types/eslint": "^8.44.2",
+    "dotenv-cli": "^7.3.0",
+    "drizzle-kit": "^0.19.13",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@pixelstack/eslint-config/base"
+    ]
+  },
+  "prettier": "@pixelstack/prettier-config"
+}

@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/combobox'
-import { styled } from '@/styled-system/jsx'
-import { combobox, type ComboboxVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {ComboboxVariantProps} from '@/styled-system/recipes';
+import { combobox  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(combobox)
 

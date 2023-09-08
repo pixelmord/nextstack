@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { CenterProperties } from '../patterns/center'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { CenterProperties } from '../patterns/center';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type CenterProps = CenterProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof CenterProperties >
 

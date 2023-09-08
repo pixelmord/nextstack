@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/accordion'
-import { styled } from '@/styled-system/jsx'
-import { accordion, type AccordionVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {AccordionVariantProps} from '@/styled-system/recipes';
+import { accordion  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(accordion)
 

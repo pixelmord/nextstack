@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "pnpm with-env next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "dev": "pnpm with-env next dev --port 3004",
+    "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
+    "format": "prettier --check \"**/*.{js,cjs,mjs,ts,tsx,md,json}\"",
+    "start": "pnpm with-env next start",
+    "typecheck": "tsc --noEmit",
+    "with-env": "dotenv -e ../../.env -e .env --"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
@@ -14,23 +18,33 @@
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "next": "^13.4.13",
+    "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.6"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20.4.9",
-    "@types/react": "^18.2.19",
+    "@pixelstack/eslint-config": "workspace:*",
+    "@pixelstack/prettier-config": "workspace:*",
+    "@pixelstack/tailwind-config": "workspace:*",
+    "@pixelstack/tsconfig": "workspace:*",
+    "@types/node": "^20.5.9",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "autoprefixer": "^10.4.14",
-    "eslint-config-custom-nextjs": "workspace:*",
-    "postcss": "^8.4.27",
-    "prettier-config": "workspace:*",
-    "tailwind-config": "workspace:*",
+    "autoprefixer": "^10.4.15",
+    "dotenv-cli": "^7.3.0",
+    "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3",
-    "tsconfig": "workspace:*",
-    "typescript": "^5.1.6"
-  }
+    "typescript": "^5.2.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@pixelstack/eslint-config/base",
+      "@pixelstack/eslint-config/nextjs",
+      "@pixelstack/eslint-config/react"
+    ]
+  },
+  "prettier": "@pixelstack/prettier-config"
 }

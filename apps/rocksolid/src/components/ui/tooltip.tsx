@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/tooltip'
-import { styled } from '@/styled-system/jsx'
-import { tooltip, type TooltipVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {TooltipVariantProps} from '@/styled-system/recipes';
+import { tooltip  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(tooltip)
 

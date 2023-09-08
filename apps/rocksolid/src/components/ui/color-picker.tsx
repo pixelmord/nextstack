@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/color-picker'
-import { styled } from '@/styled-system/jsx'
-import { colorPicker, type ColorPickerVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {ColorPickerVariantProps} from '@/styled-system/recipes';
+import { colorPicker  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(colorPicker)
 

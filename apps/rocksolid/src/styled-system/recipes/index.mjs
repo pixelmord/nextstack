@@ -9,6 +9,7 @@ export * from './link.mjs';
 export * from './textarea.mjs';
 export * from './accordion.mjs';
 export * from './avatar.mjs';
+export * from './card.mjs';
 export * from './carousel.mjs';
 export * from './checkbox.mjs';
 export * from './color-picker.mjs';

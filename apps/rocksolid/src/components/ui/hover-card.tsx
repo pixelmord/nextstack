@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/hover-card'
-import { styled } from '@/styled-system/jsx'
-import { hoverCard, type HoverCardVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {HoverCardVariantProps} from '@/styled-system/recipes';
+import { hoverCard  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(hoverCard)
 

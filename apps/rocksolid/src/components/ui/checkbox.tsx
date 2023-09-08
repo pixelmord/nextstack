@@ -1,8 +1,9 @@
 import * as Ark from '@ark-ui/solid/checkbox'
-import { styled } from '@/styled-system/jsx'
-import { checkbox, type CheckboxVariantProps } from '@/styled-system/recipes'
 
 import { createStyleContext } from '@/lib/create-style-context'
+import { styled } from '@/styled-system/jsx'
+import type {CheckboxVariantProps} from '@/styled-system/recipes';
+import { checkbox  } from '@/styled-system/recipes'
 
 const { withProvider, withContext } = createStyleContext(checkbox)
 
