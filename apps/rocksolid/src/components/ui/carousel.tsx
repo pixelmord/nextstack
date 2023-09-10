@@ -2,8 +2,8 @@ import * as Ark from '@ark-ui/solid/carousel';
 
 import { createStyleContext } from '@/lib/create-style-context';
 import { styled } from '@/styled-system/jsx';
-import type {CarouselVariantProps} from '@/styled-system/recipes';
-import { carousel  } from '@/styled-system/recipes';
+import type { CarouselVariantProps } from '@/styled-system/recipes';
+import { carousel } from '@/styled-system/recipes';
 
 const { withProvider, withContext } = createStyleContext(carousel);
 

@@ -1,4 +1,4 @@
-import Auth from '@/components/Auth';
+import { AuthShowcase as Auth } from '@/components/AuthShowcase';
 
 export default function Login() {
   return <Auth />;

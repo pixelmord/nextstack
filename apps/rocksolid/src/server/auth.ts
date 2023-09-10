@@ -1,11 +1,11 @@
-import Discord from "@auth/core/providers/discord";
-import type {SolidAuthConfig} from "@solid-mediakit/auth";
+import Discord from '@auth/core/providers/discord';
+import type { SolidAuthConfig } from '@solid-mediakit/auth';
 
-import { serverEnv } from "@/env/server";
+import { serverEnv } from '@/env/server';
 
-declare module "@auth/core/types" {
+declare module '@auth/core/types' {
   export interface Session {
-    user?: DefaultSession["user"];
+    user?: DefaultSession['user'];
   }
 }
 

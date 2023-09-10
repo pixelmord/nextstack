@@ -14,3 +14,6 @@ public
 .prettierignore
 .DS_Store
 .eslintignore
+# auto-generated
+**/drizzle
+**/**/styled-system

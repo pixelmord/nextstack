@@ -1,28 +1,22 @@
-import * as Ark from '@ark-ui/solid/pagination'
+import * as Ark from '@ark-ui/solid/pagination';
 
-import { createStyleContext } from '@/lib/create-style-context'
-import { styled } from '@/styled-system/jsx'
-import type {PaginationVariantProps} from '@/styled-system/recipes';
-import { pagination  } from '@/styled-system/recipes'
+import { createStyleContext } from '@/lib/create-style-context';
+import { styled } from '@/styled-system/jsx';
+import type { PaginationVariantProps } from '@/styled-system/recipes';
+import { pagination } from '@/styled-system/recipes';
 
-const { withProvider, withContext } = createStyleContext(pagination)
+const { withProvider, withContext } = createStyleContext(pagination);
 
-export * from '@ark-ui/solid/pagination'
-export type PaginationProps = Ark.PaginationProps & PaginationVariantProps
+export * from '@ark-ui/solid/pagination';
+export type PaginationProps = Ark.PaginationProps & PaginationVariantProps;
 
-const PaginationRoot = withProvider(styled(Ark.Pagination), 'root')
-export const PaginationEllipsis = withContext(styled(Ark.PaginationEllipsis), 'ellipsis')
-export const PaginationList = withContext(styled(Ark.PaginationList), 'list')
-export const PaginationListItem = withContext(styled(Ark.PaginationListItem), 'listItem')
-export const PaginationNextPageTrigger = withContext(
-  styled(Ark.PaginationNextPageTrigger),
-  'nextPageTrigger',
-)
-export const PaginationPageTrigger = withContext(styled(Ark.PaginationPageTrigger), 'pageTrigger')
-export const PaginationPrevPageTrigger = withContext(
-  styled(Ark.PaginationPrevPageTrigger),
-  'prevPageTrigger',
-)
+const PaginationRoot = withProvider(styled(Ark.Pagination), 'root');
+export const PaginationEllipsis = withContext(styled(Ark.PaginationEllipsis), 'ellipsis');
+export const PaginationList = withContext(styled(Ark.PaginationList), 'list');
+export const PaginationListItem = withContext(styled(Ark.PaginationListItem), 'listItem');
+export const PaginationNextPageTrigger = withContext(styled(Ark.PaginationNextPageTrigger), 'nextPageTrigger');
+export const PaginationPageTrigger = withContext(styled(Ark.PaginationPageTrigger), 'pageTrigger');
+export const PaginationPrevPageTrigger = withContext(styled(Ark.PaginationPrevPageTrigger), 'prevPageTrigger');
 
 export const Pagination = Object.assign(PaginationRoot, {
   Root: PaginationRoot,
@@ -32,4 +26,4 @@ export const Pagination = Object.assign(PaginationRoot, {
   NextPageTrigger: PaginationNextPageTrigger,
   PageTrigger: PaginationPageTrigger,
   PrevPageTrigger: PaginationPrevPageTrigger,
-})
+});

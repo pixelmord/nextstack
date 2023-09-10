@@ -4,10 +4,11 @@
     "jsxImportSource": "solid-js",
     "jsx": "preserve",
     "strict": true,
-    "types": ["solid-start/env", "@testing-library/jest-dom","vitest"],
+    "types": ["solid-start/env", "@testing-library/jest-dom", "vitest"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
+  "types": ["solid-start/env", "@testing-library/jest-dom", "vitest"]
 }

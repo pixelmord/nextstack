@@ -1,23 +1,23 @@
-import * as Ark from '@ark-ui/solid/tags-input'
+import * as Ark from '@ark-ui/solid/tags-input';
 
-import { createStyleContext } from '@/lib/create-style-context'
-import { styled } from '@/styled-system/jsx'
-import type {TagsInputVariantProps} from '@/styled-system/recipes';
-import { tagsInput  } from '@/styled-system/recipes'
+import { createStyleContext } from '@/lib/create-style-context';
+import { styled } from '@/styled-system/jsx';
+import type { TagsInputVariantProps } from '@/styled-system/recipes';
+import { tagsInput } from '@/styled-system/recipes';
 
-const { withProvider, withContext } = createStyleContext(tagsInput)
+const { withProvider, withContext } = createStyleContext(tagsInput);
 
-export * from '@ark-ui/solid/tags-input'
-export type TagsInputProps = Ark.TagsInputProps & TagsInputVariantProps
+export * from '@ark-ui/solid/tags-input';
+export type TagsInputProps = Ark.TagsInputProps & TagsInputVariantProps;
 
-const TagsInputRoot = withProvider(styled(Ark.TagsInput), 'root')
-export const TagsInputClearTrigger = withContext(styled(Ark.TagsInputClearTrigger), 'clearTrigger')
-export const TagsInputControl = withContext(styled(Ark.TagsInputControl), 'control')
-export const TagsInputInput = withContext(styled(Ark.TagsInput), 'input')
-export const TagsInputLabel = withContext(styled(Ark.TagsInputLabel), 'label')
-export const Tag = withContext(styled(Ark.Tag), 'tag')
-export const TagInput = withContext(styled(Ark.TagInput), 'tagInput')
-export const TagDeleteTrigger = withContext(styled(Ark.TagsInputClearTrigger), 'tagDeleteTrigger')
+const TagsInputRoot = withProvider(styled(Ark.TagsInput), 'root');
+export const TagsInputClearTrigger = withContext(styled(Ark.TagsInputClearTrigger), 'clearTrigger');
+export const TagsInputControl = withContext(styled(Ark.TagsInputControl), 'control');
+export const TagsInputInput = withContext(styled(Ark.TagsInput), 'input');
+export const TagsInputLabel = withContext(styled(Ark.TagsInputLabel), 'label');
+export const Tag = withContext(styled(Ark.Tag), 'tag');
+export const TagInput = withContext(styled(Ark.TagInput), 'tagInput');
+export const TagDeleteTrigger = withContext(styled(Ark.TagsInputClearTrigger), 'tagDeleteTrigger');
 
 export const TagsInput = Object.assign(TagsInputRoot, {
   Root: TagsInputRoot,
@@ -28,4 +28,4 @@ export const TagsInput = Object.assign(TagsInputRoot, {
   Tag: Tag,
   TagInput: TagInput,
   TagDeleteTrigger: TagDeleteTrigger,
-})
+});

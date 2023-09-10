@@ -1,8 +1,8 @@
-import { z } from "zod";
+import { z } from 'zod';
 
-import { desc, eq, schema } from "@pixelstack/db";
+import { desc, eq, schema } from '@pixelstack/db';
 
-import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 
 export const postRouter = createTRPCRouter({
   all: publicProcedure.query(({ ctx }) => {
@@ -10,25 +10,23 @@ export const postRouter = createTRPCRouter({
     return ctx.db.query.post.findMany({ orderBy: desc(schema.post.id) });
   }),
 
-  byId: publicProcedure
-    .input(z.object({ id: z.number() }))
-    .query(({ ctx, input }) => {
-      // return ctx.db
-      //   .select()
-      //   .from(schema.post)
-      //   .where(eq(schema.post.id, input.id));
+  byId: publicProcedure.input(z.object({ id: z.number() })).query(({ ctx, input }) => {
+    // return ctx.db
+    //   .select()
+    //   .from(schema.post)
+    //   .where(eq(schema.post.id, input.id));
 
-      return ctx.db.query.post.findFirst({
-        where: eq(schema.post.id, input.id),
-      });
-    }),
+    return ctx.db.query.post.findFirst({
+      where: eq(schema.post.id, input.id),
+    });
+  }),
 
   create: protectedProcedure
     .input(
       z.object({
         title: z.string().min(1),
         content: z.string().min(1),
-      }),
+      })
     )
     .mutation(({ ctx, input }) => {
       return ctx.db.insert(schema.post).values(input);

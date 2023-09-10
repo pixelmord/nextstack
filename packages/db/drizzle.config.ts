@@ -1,19 +1,19 @@
-import {config} from "dotenv";
-import type { Config } from "drizzle-kit";
+import { config } from 'dotenv';
+import type { Config } from 'drizzle-kit';
 
 config({
-  path: "../../.env",
+  path: '../../.env',
 });
 
 if (!process.env.DATABASE_URL) {
-  throw new Error("DATABASE_URL is not set");
+  throw new Error('DATABASE_URL is not set');
 }
 
 export default {
-  schema: "./schema",
-  driver: "mysql2",
+  schema: './schema',
+  driver: 'pg',
   dbCredentials: {
     connectionString: process.env.DATABASE_URL,
   },
-  tablesFilter: ["t3turbo_*"],
+  tablesFilter: ['pixelstack_*'],
 } satisfies Config;

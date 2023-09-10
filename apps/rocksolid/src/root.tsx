@@ -16,7 +16,11 @@ export const initializecolorScheme = () => {
   let colorScheme;
   if (typeof document !== 'undefined') {
     colorScheme = document.documentElement.dataset.colorMode as 'light' | 'dark';
-  } else if (typeof localStorage !== 'undefined' && localStorage.getItem('colorScheme')) {
+  } else if (
+    // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+    typeof localStorage !== 'undefined' &&
+    localStorage.getItem('colorScheme')
+  ) {
     colorScheme = localStorage.getItem('colorScheme') as 'light' | 'dark';
   } else if (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     colorScheme = 'dark';

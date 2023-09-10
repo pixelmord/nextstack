@@ -1,5 +1,5 @@
 import type { AuthSession, Session } from '@supabase/supabase-js';
-import type { Component} from 'solid-js';
+import type { Component } from 'solid-js';
 import { createEffect, createResource, createSignal } from 'solid-js';
 import { useSupabaseAuth } from 'solid-supabase';
 

@@ -37,7 +37,13 @@ export default function App() {
           width: '100%',
         })}
       >
-        <nav class={css({ p: '0.75rem', display: 'flex', justifyContent: 'space-between' })}>
+        <nav
+          class={css({
+            p: '0.75rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+          })}
+        >
           <div>
             <Button variant="tertiary" onClick={() => setMaximized(!maximized())}>
               <Menu />

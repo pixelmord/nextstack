@@ -15,4 +15,6 @@ export const serverScheme = z.object({
 
 export const clientScheme = z.object({
   MODE: z.enum(['development', 'production', 'test']).default('development'),
+  VITE_SUPABASE_URL: z.string(),
+  VITE_SUPABASE_ANON_KEY: z.string(),
 });

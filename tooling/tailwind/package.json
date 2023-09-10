@@ -2,8 +2,8 @@
   "name": "@pixelstack/tailwind-config",
   "version": "0.1.0",
   "private": true,
-  "main": "index.ts",
   "license": "MIT",
+  "main": "index.ts",
   "files": [
     "index.ts",
     "shadcn.ts",
@@ -11,17 +11,24 @@
   ],
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@pixelstack/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@pixelstack/eslint-config/base"
+    ],
+    "root": true
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/typography": "^0.5.10",
-    "tailwindcss-animate": "^1.0.6",
     "autoprefixer": "^10.4.15",
     "postcss": "8.4.29",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
     "@pixelstack/eslint-config": "^0.2.0",
@@ -31,12 +38,5 @@
     "eslint": "^8.49.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@pixelstack/eslint-config/base"
-    ]
-  },
-  "prettier": "@pixelstack/prettier-config"
+  }
 }

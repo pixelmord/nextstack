@@ -1,28 +1,22 @@
-import * as Ark from '@ark-ui/solid/number-input'
+import * as Ark from '@ark-ui/solid/number-input';
 
-import { createStyleContext } from '@/lib/create-style-context'
-import { styled } from '@/styled-system/jsx'
-import type {NumberInputVariantProps} from '@/styled-system/recipes';
-import { numberInput  } from '@/styled-system/recipes'
+import { createStyleContext } from '@/lib/create-style-context';
+import { styled } from '@/styled-system/jsx';
+import type { NumberInputVariantProps } from '@/styled-system/recipes';
+import { numberInput } from '@/styled-system/recipes';
 
-const { withProvider, withContext } = createStyleContext(numberInput)
+const { withProvider, withContext } = createStyleContext(numberInput);
 
-export * from '@ark-ui/solid/number-input'
-export type NumberInputProps = Ark.NumberInputProps & NumberInputVariantProps
+export * from '@ark-ui/solid/number-input';
+export type NumberInputProps = Ark.NumberInputProps & NumberInputVariantProps;
 
-const NumberInputRoot = withProvider(styled(Ark.NumberInput), 'root')
-export const NumberInputControl = withContext(styled(Ark.NumberInputControl), 'control')
-export const NumberInputDecrementTrigger = withContext(
-  styled(Ark.NumberInputDecrementTrigger),
-  'decrementTrigger',
-)
-export const NumberInputInput = withContext(styled(Ark.NumberInputField), 'input')
-export const NumberInputIncrementTrigger = withContext(
-  styled(Ark.NumberInputIncrementTrigger),
-  'incrementTrigger',
-)
-export const NumberInputLabel = withContext(styled(Ark.NumberInputLabel), 'label')
-export const NumberInputScrubber = withContext(styled(Ark.NumberInputScrubber), 'scrubber')
+const NumberInputRoot = withProvider(styled(Ark.NumberInput), 'root');
+export const NumberInputControl = withContext(styled(Ark.NumberInputControl), 'control');
+export const NumberInputDecrementTrigger = withContext(styled(Ark.NumberInputDecrementTrigger), 'decrementTrigger');
+export const NumberInputInput = withContext(styled(Ark.NumberInputField), 'input');
+export const NumberInputIncrementTrigger = withContext(styled(Ark.NumberInputIncrementTrigger), 'incrementTrigger');
+export const NumberInputLabel = withContext(styled(Ark.NumberInputLabel), 'label');
+export const NumberInputScrubber = withContext(styled(Ark.NumberInputScrubber), 'scrubber');
 
 export const NumberInput = Object.assign(NumberInputRoot, {
   Root: NumberInputRoot,
@@ -32,4 +26,4 @@ export const NumberInput = Object.assign(NumberInputRoot, {
   IncrementTrigger: NumberInputIncrementTrigger,
   Label: NumberInputLabel,
   Scrubber: NumberInputScrubber,
-})
+});

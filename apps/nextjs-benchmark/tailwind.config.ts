@@ -1,8 +1,8 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
-import baseConfig from "@pixelstack/tailwind-config";
+import baseConfig from '@pixelstack/tailwind-config';
 
 export default {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ['./src/**/*.{ts,tsx}'],
   presets: [baseConfig],
 } satisfies Config;

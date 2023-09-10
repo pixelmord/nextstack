@@ -2,14 +2,21 @@
   "name": "@pixelstack/api",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "main": "./index.ts",
   "types": "./index.ts",
-  "license": "MIT",
   "scripts": {
     "clean": "rm -rf .turbo node_modules",
-    "lint": "eslint .",
     "format": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit"
+  },
+  "prettier": "@pixelstack/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "@pixelstack/eslint-config/base"
+    ],
+    "root": true
   },
   "dependencies": {
     "@pixelstack/auth": "^0.1.0",
@@ -27,12 +34,5 @@
     "eslint": "^8.49.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@pixelstack/eslint-config/base"
-    ]
-  },
-  "prettier": "@pixelstack/prettier-config"
+  }
 }
