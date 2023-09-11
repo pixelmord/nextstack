@@ -1,4 +1,3 @@
-import { Session } from '@auth/core';
 import { getSession } from '@auth/solid-start';
 import { redirect } from 'solid-start';
 import { createHandler, renderAsync, StartServer } from 'solid-start/entry-server';

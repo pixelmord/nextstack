@@ -266,6 +266,9 @@ importers:
       solid-trpc:
         specifier: 0.1.0-sssr.8
         version: 0.1.0-sssr.8(@tanstack/solid-query@5.0.0-beta.15)(@trpc/client@10.38.1)(@trpc/server@10.38.1)(solid-js@1.7.11)(solid-start@0.3.5)
+      superjson:
+        specifier: 1.13.1
+        version: 1.13.1
       zod:
         specifier: ^3.22.2
         version: 3.22.2
@@ -436,6 +439,9 @@ importers:
       '@trpc/server':
         specifier: ^10.38.1
         version: 10.38.1
+      solid-start-trpc:
+        specifier: ^0.0.16
+        version: 0.0.16(@trpc/client@10.38.1)(@trpc/server@10.38.1)(solid-js@1.7.11)(solid-start@0.2.32)
       superjson:
         specifier: 1.13.1
         version: 1.13.1
@@ -26034,6 +26040,20 @@ packages:
       vite: 4.4.9(@types/node@20.5.9)
     transitivePeerDependencies:
       - supports-color
+
+  /solid-start-trpc@0.0.16(@trpc/client@10.38.1)(@trpc/server@10.38.1)(solid-js@1.7.11)(solid-start@0.2.32):
+    resolution: {integrity: sha512-99/EGIE0SObmCVhZR00bYpkEQpCDP22YgjalQpVgm0BKy2+tJzEC6vdvOII2Ppa0Fm7iPwc4LDZoFX2E3KYmsg==}
+    peerDependencies:
+      '@trpc/client': ^10.0.0
+      '@trpc/server': ^10.0.0
+      solid-js: ^1.5.7
+      solid-start: ^0.2.1
+    dependencies:
+      '@trpc/client': 10.38.1(@trpc/server@10.38.1)
+      '@trpc/server': 10.38.1
+      solid-js: 1.7.11
+      solid-start: 0.2.32(@solidjs/meta@0.28.6)(@solidjs/router@0.8.3)(solid-js@1.7.11)(vite@4.4.9)
+    dev: false
 
   /solid-start-trpc@0.0.16(@trpc/client@10.38.1)(@trpc/server@10.38.1)(solid-js@1.7.11)(solid-start@0.3.5):
     resolution: {integrity: sha512-99/EGIE0SObmCVhZR00bYpkEQpCDP22YgjalQpVgm0BKy2+tJzEC6vdvOII2Ppa0Fm7iPwc4LDZoFX2E3KYmsg==}

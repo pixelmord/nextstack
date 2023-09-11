@@ -6,27 +6,20 @@
  * tl;dr - this is where all the tRPC server stuff is created and plugged in.
  * The pieces you will need to use are documented accordingly near the end
  */
+import type { inferAsyncReturnType } from '@trpc/server';
 import { initTRPC, TRPCError } from '@trpc/server';
 import superjson from 'superjson';
 import { ZodError } from 'zod';
 
 import type { Session } from '@pixelstack/auth';
-import { auth } from '@pixelstack/auth';
+import { getSession } from '@pixelstack/auth';
 import { db } from '@pixelstack/db';
-
-/**
- * 1. CONTEXT
- *
- * This section defines the "contexts" that are available in the backend API
- *
- * These allow you to access things like the database, the session, etc, when
- * processing a request
- *
- */
-interface CreateContextOptions {
-  session: Session | null;
+interface createSolidAPIHandlerContext {
+  req: Request;
+  res: {
+    headers: Record<string, unknown>;
+  };
 }
-
 /**
  * This helper generates the "internals" for a tRPC context. If you need to use
  * it, you can export it from here
@@ -36,9 +29,12 @@ interface CreateContextOptions {
  * - trpc's `createSSGHelpers` where we don't have req/res
  * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
-const createInnerTRPCContext = (opts: CreateContextOptions) => {
+const createInnerTRPCContext = (opts: createSolidAPIHandlerContext, session: Session | null) => {
+  const source = opts.req.headers.get('x-trpc-source') ?? 'unknown';
+
+  console.log('>>> tRPC Request from', source, 'by', session?.user);
   return {
-    session: opts.session,
+    session,
     db,
   };
 };
@@ -48,16 +44,12 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
-export const createTRPCContext = async (opts: { req?: Request; auth?: Session }) => {
-  const session = opts.auth ?? (await auth());
-  const source = opts.req?.headers.get('x-trpc-source') ?? 'unknown';
-
-  console.log('>>> tRPC Request from', source, 'by', session?.user);
-
-  return createInnerTRPCContext({
-    session,
-  });
+export const createTRPCContext = async (opts: createSolidAPIHandlerContext) => {
+  const session = await getSession(opts.req);
+  return createInnerTRPCContext(opts, session);
 };
+
+export type TRPCContext = inferAsyncReturnType<typeof createTRPCContext>;
 
 /**
  * 2. INITIALIZATION

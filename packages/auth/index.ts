@@ -1,16 +1,21 @@
 import GitHub from '@auth/core/providers/github';
+import type { DefaultSession } from '@auth/core/types';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import type { SolidAuthConfig } from '@auth/solid-start';
-import { SolidAuth } from '@auth/solid-start';
+import { getSession as getUserSession, SolidAuth } from '@auth/solid-start';
 
 import { db, tableCreator } from '@pixelstack/db';
 
 import { serverEnv as env } from './env';
 
+export const getSession = async (req: Request) => await getUserSession(req, authOpts);
 declare module '@auth/core/types' {
   export interface Session {
     user?: DefaultSession['user'];
   }
+}
+export interface Session {
+  user?: DefaultSession['user'];
 }
 // Update this whenever adding new providers so that the client can
 export const providers = ['github'] as const;
