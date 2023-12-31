@@ -30,7 +30,7 @@ const flattenTextKeyInObject = (obj: json) => {
         if (curObj['text']) {
           return { ...acc, [curKey]: curObj['text'] };
         }
-        return { ...acc, [curKey]: { humanReadableKeyName: key, ...flattenTextKeyInObject(obj[key]) } };
+        return { ...acc, [curKey]: { humanReadableKeyName: key, ...flattenTextKeyInObject(obj[key] as json) } };
       }
       return acc;
     },
@@ -53,22 +53,20 @@ const main = async () => {
     folders.map((f, i) => {
       const dataId = f.relativePath;
       return Promise.all(
-        files[i].map(async (file) => {
+        files[i]!.map(async (file) => {
           const fileId = file.split('/').pop()?.split('.')[0];
           const data = await fs.readFile(file, 'utf-8');
           const json = JSON.parse(data);
-          const flattenedJson = {
+          return {
             id: dataId + '--' + fileId,
             url: `/worldfacts/${dataId}/${fileId}`,
             ...flattenTextKeyInObject(json),
           };
-
-          return flattenedJson;
         })
       );
     })
   );
-  index.addDocuments(camelcaseKeys(dataEntries.flat(), { deep: true }));
+  await index.addDocuments(camelcaseKeys(dataEntries.flat(), { deep: true }));
 };
 main().catch((e) => {
   console.error(e);
