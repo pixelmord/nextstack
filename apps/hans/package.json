@@ -7,10 +7,10 @@
     "enhance": "enhance"
   },
   "devDependencies": {
-    "@enhance/cli": "^1.0.4",
+    "@enhance/cli": "^1.0.8",
     "@enhance/types": "^0.6.1",
-    "@types/eslint": "^8.44.2",
-    "eslint": "^8.49.0"
+    "@types/eslint": "^8.56.0",
+    "eslint": "^8.56.0"
   },
   "eslintConfig": {
     "env": {
@@ -30,8 +30,8 @@
     }
   },
   "dependencies": {
-    "@enhance/arc-plugin-enhance": "^6.2.2",
-    "@enhance/arc-plugin-styles": "^3.0.4",
+    "@enhance/arc-plugin-enhance": "^9.2.0",
+    "@enhance/arc-plugin-styles": "^5.0.3",
     "@enhance/styles-cribsheet": "^0.0.9"
   }
 }

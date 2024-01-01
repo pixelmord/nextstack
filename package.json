@@ -19,21 +19,20 @@
     "typecheck": "turbo typecheck"
   },
   "dependencies": {
-    "@manypkg/cli": "^0.21.0",
+    "@manypkg/cli": "^0.21.1",
     "@pixelstack/prettier-config": "workspace:*",
-    "@turbo/gen": "^1.10.13",
-    "@types/eslint": "^8.44.2",
-    "eslint": "^8.49.0",
-    "prettier": "^3.0.3",
-    "turbo": "^1.10.13",
-    "typescript": "^5.2.2",
-    "typesync": "^0.11.1"
+    "@turbo/gen": "^1.11.2",
+    "@types/eslint": "^8.56.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "turbo": "^1.11.2",
+    "typescript": "^5.3.3",
+    "typesync": "^0.12.0"
   },
   "engines": {
     "node": ">=v18.17.1"
   },
   "packageManager": "pnpm@8.7.4",
   "name": "nextstack",
-  "prettier": "@pixelstack/prettier-config",
-  "devDependencies": {}
+  "prettier": "@pixelstack/prettier-config"
 }

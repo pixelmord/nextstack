@@ -23,20 +23,20 @@
     "root": true
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
-    "autoprefixer": "^10.4.15",
-    "postcss": "8.4.29",
-    "tailwindcss": "3.3.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "8.4.32",
+    "tailwindcss": "3.4.0",
     "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
     "@pixelstack/eslint-config": "^0.2.0",
     "@pixelstack/prettier-config": "^0.1.0",
     "@pixelstack/tsconfig": "^0.1.0",
-    "@types/eslint": "^8.44.2",
-    "eslint": "^8.49.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "@types/eslint": "^8.56.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   }
 }

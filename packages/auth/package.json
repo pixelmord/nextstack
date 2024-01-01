@@ -19,22 +19,22 @@
     "root": true
   },
   "dependencies": {
-    "@auth/core": "^0.14.0",
-    "@auth/drizzle-adapter": "^0.3.2",
-    "@auth/solid-start": "^0.1.1",
+    "@auth/core": "^0.19.0",
+    "@auth/drizzle-adapter": "^0.3.12",
+    "@auth/solid-start": "^0.1.9",
     "@pixelstack/db": "^0.1.0",
-    "@solid-mediakit/auth": "^1.0.0",
-    "zod": "^3.22.2"
+    "@solid-mediakit/auth": "^1.0.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@pixelstack/eslint-config": "^0.2.0",
     "@pixelstack/prettier-config": "^0.1.0",
     "@pixelstack/tsconfig": "^0.1.0",
-    "@types/eslint": "^8.44.2",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.0",
-    "eslint": "^8.49.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "@types/eslint": "^8.56.0",
+    "@types/react": "18.2.46",
+    "@types/react-dom": "18.2.18",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   }
 }

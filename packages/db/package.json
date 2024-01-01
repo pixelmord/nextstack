@@ -22,21 +22,21 @@
     "root": true
   },
   "dependencies": {
-    "@auth/core": "^0.14.0",
+    "@auth/core": "^0.19.0",
     "dotenv": "^16.3.1",
-    "drizzle-orm": "^0.28.6",
+    "drizzle-orm": "^0.29.2",
     "pg": "^8.11.3",
-    "postgres": "^3.3.5"
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
     "@pixelstack/eslint-config": "^0.2.0",
     "@pixelstack/prettier-config": "^0.1.0",
     "@pixelstack/tsconfig": "^0.1.0",
-    "@types/eslint": "^8.44.2",
+    "@types/eslint": "^8.56.0",
     "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.19.13",
-    "eslint": "^8.49.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2"
+    "drizzle-kit": "^0.20.9",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
   }
 }

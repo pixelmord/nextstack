@@ -17,7 +17,7 @@
     "@pixelstack/eslint-config": "workspace:*",
     "@pixelstack/prettier-config": "workspace:*",
     "@pixelstack/tsconfig": "workspace:*",
-    "@types/node": "^20.5.9"
+    "@types/node": "^20.10.6"
   },
   "eslintConfig": {
     "root": true,
