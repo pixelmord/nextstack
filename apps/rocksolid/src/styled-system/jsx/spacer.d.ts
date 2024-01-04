@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { SpacerProperties } from '../patterns/spacer'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { SpacerProperties } from '../patterns/spacer';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type SpacerProps = SpacerProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof SpacerProperties >
 

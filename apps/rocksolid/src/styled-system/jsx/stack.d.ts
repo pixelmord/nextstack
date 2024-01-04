@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { StackProperties } from '../patterns/stack'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { StackProperties } from '../patterns/stack';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type StackProps = StackProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof StackProperties >
 

@@ -1,7 +1,7 @@
 /* eslint-disable */
-import type { ConditionalValue } from '../types'
-import type { Pretty } from '../types/helpers'
-import type { DistributiveOmit } from '../types/system-types'
+import type { ConditionalValue } from '../types/index';
+import type { Pretty } from '../types/helpers';
+import type { DistributiveOmit } from '../types/system-types';
 
 type SegmentGroupVariant = {
   size: "sm" | "md"

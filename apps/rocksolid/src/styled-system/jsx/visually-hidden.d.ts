@@ -1,8 +1,8 @@
 /* eslint-disable */
-import { Component } from 'solid-js'
-import { VisuallyHiddenProperties } from '../patterns/visually-hidden'
-import { HTMLStyledProps } from '../types/jsx'
-import { DistributiveOmit } from '../types/system-types'
+import type { Component } from 'solid-js'
+import type { VisuallyHiddenProperties } from '../patterns/visually-hidden';
+import type { HTMLStyledProps } from '../types/jsx';
+import type { DistributiveOmit } from '../types/system-types';
 
 export type VisuallyHiddenProps = VisuallyHiddenProperties & DistributiveOmit<HTMLStyledProps<'div'>, keyof VisuallyHiddenProperties >
 
